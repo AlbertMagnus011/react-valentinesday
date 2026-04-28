@@ -1,0 +1,22 @@
+import { useTheme } from "@/contexts/ThemeContext"
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+
+type Props = React.ComponentProps<typeof Button>;
+
+export const FancyButton = ({children, className, ...props} : Props) => {
+
+    const { styles } = useTheme();
+
+    return (
+        <>
+            <Button variant="outline"
+            className={cn(`bg-transparent ${styles.text} border-2 border-[#3d0e0e] text-[#3d0e0e] hover:bg-transparent cursor-pointer
+            hover:border-[#3d0e0e] hover:border-2 rounded-2xl px-8 py-6 text-lg tracking-wide`, className)}
+            {...props}
+            >
+                {children}
+            </Button>
+        </>
+    )
+}

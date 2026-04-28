@@ -17,7 +17,7 @@ type Props = {
 };
 
 export function ThemeProvider ({children}: Props) {
-    const [theme, setTheme] = useState<Theme>("dark");
+    const [theme, setTheme] = useState<Theme>("black");
 
     return (
         <ThemeContext.Provider

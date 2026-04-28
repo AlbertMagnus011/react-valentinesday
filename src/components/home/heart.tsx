@@ -1,5 +1,6 @@
 "use client"
 
+import { useApp } from "@/contexts/AppContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import {AnimatePresence, motion} from "framer-motion"
 import { useState } from "react"
@@ -9,10 +10,12 @@ export const Heart = () => {
     const [opened, setOpened] = useState(false)
     const {setTheme} = useTheme();
     const [finish, setFinished] = useState(false);
+    const {setPhase} = useApp();
 
     const handleFinish = () => {
-        setTheme("love");
+        setTheme("pink");
         setFinished(true);
+        setPhase("key");
     }
 
     if (finish) return null;
@@ -43,7 +46,7 @@ export const Heart = () => {
                     >
                         <div className="absolute w-32 h-32 bg-[#F19BB8] rounded-full -top-16 left-0" />
                         <div className="absolute w-32 h-32 bg-[#F19BB8] rounded-full top-0 -left-16" />
-                    </motion.div>
+                </motion.div>
     </div>
     )
 }
