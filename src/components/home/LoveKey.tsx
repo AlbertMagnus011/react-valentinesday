@@ -43,29 +43,29 @@ export const LoveKey = () => {
                     <DialogTrigger asChild>
                         {!closing && (<FancyButton>Abrir</FancyButton>)}
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-sm bg-[#942cde]">    
+                    <DialogContent className="sm:max-w-sm bg-cabernet">    
                         <motion.div 
                             animate={
                                 closing ? {opacity: 0, scale: 0.7}
                                         : {opacity: 1, scale: 1}
                             }
                             transition={{ duration: 0.3}}>
-                            <form onSubmit={handleSubmit} className="h-80 bg-[#942cde] flex flex-col justify-center items-center gap-10">
+                            <form onSubmit={handleSubmit} className="h-80 bg-cabernet flex flex-col justify-center items-center gap-10">
                                 <DialogHeader>
-                                    <DialogTitle className="text-2xl text-white">Digite a chave</DialogTitle>
+                                    <DialogTitle className="text-2xl text-warm-white">Digite a chave</DialogTitle>
                                 </DialogHeader>
                                     <Input name="key" 
                                     value={key}
                                     onChange={(e) => {setKey(e.target.value); if(error) setError(false)}}
                                     placeholder="Digite aqui..."
-                                    className={`border-0 border-b-2 border-b-white shadow-none rounded-none 
+                                    className={`border-0 border-b-2 border-b-warm-white shadow-none rounded-none 
                                     focus-visible:border-b-white text-center text-white focus-visible:ring-0 
                                     ${error ? "border-b-red-500 text-red-300 placeholder:text-red-300"
                                     : "border-b-white text-white placeholder:text-white/50"
                                 }`} autoFocus />
                                 {error && (<p className="text-sm text-red-300 text-center">Chave incorreta</p>)}
                                 <DialogFooter>
-                                    <FancyButton type="submit" className="border-white text-white hover:border-white hover:text-white" >
+                                    <FancyButton type="submit" className="border-warm-white text-warm-white hover:border-warm-white hover:text-warm-white" >
                                         Abrir</FancyButton>
                                 </DialogFooter>
                             </form>
@@ -76,7 +76,7 @@ export const LoveKey = () => {
             {unlocking && (
             <motion.div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none">
                 <motion.div 
-            className="absolute rounded-full bg-[#BF32FE]"
+            className="absolute rounded-full bg-cabernet"
             initial={{ width:220, height:220, scale:1}}
             animate={animation === "retraction" ? { width: 25, height:25, scale:1} : {scale: 120}}
             transition={{duration: animation === "retraction" ? 1 : 0.4, ease: [0.83, 0, 0.17, 1]}}
@@ -85,8 +85,8 @@ export const LoveKey = () => {
                     setTimeout(() => setAnimation("expansion"), 150)
                 }
                 if(animation === "expansion"){
-                    setTheme("purple");
-                    setPhase("hero")
+                    setTheme("black");
+                    setPhase("story")
                 }
             }}/>
             </motion.div>

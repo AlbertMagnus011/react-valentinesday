@@ -11,8 +11,8 @@ export const FancyButton = ({children, className, ...props} : Props) => {
     return (
         <>
             <Button variant="outline"
-            className={cn(`bg-transparent ${styles.text} border-2 border-[#3d0e0e] text-[#3d0e0e] hover:bg-transparent cursor-pointer
-            hover:border-[#3d0e0e] hover:border-2 rounded-2xl px-8 py-6 text-lg tracking-wide`, className)}
+            className={cn(`bg-transparent border-2 border-cabernet text-cabernet hover:bg-transparent cursor-pointer
+            hover:border-[#3d0e0e] hover:border-2 rounded-2xl px-8 py-6 text-lg font-button font-medium tracking-[0.18em] uppercase`, className)}
             {...props}
             >
                 {children}

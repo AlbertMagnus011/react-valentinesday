@@ -1,1 +1,1 @@
-export type Phase = "intro" | "key" | "hero" | "story" | "end"
+export type Phase = "intro" | "key" | "story" | "end"
