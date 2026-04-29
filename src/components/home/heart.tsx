@@ -8,8 +8,8 @@ import { useState } from "react"
 
 export const Heart = () => {
     const [opened, setOpened] = useState(false)
-    const {setTheme} = useTheme();
     const [finish, setFinished] = useState(false);
+    const {setTheme} = useTheme();
     const {setPhase} = useApp();
 
     const handleFinish = () => {
